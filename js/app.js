@@ -2,8 +2,16 @@ $(document).ready(function() {
 
     function toggleSidebar() {
       $(".button").toggleClass("active");
-      $("main").toggleClass("move-to-right");
-      $(".sidebar-item").toggleClass("active");
+      if( $("main").hasClass("move-to-top"))
+      {
+        $("main").removeClass("move-to-top")
+         $("main").toggleClass("move-to-down");
+      }
+      else{
+        $("main").removeClass("move-to-down");
+         $("main").toggleClass("move-to-top");
+      }
+        $(".sidebar-item").toggleClass("active");
     }
   
     $(".button").on("click tap", function() {
